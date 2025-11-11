@@ -1,0 +1,11 @@
+{
+    "max_words": 10000,
+    "max_len": 100,
+    "embedding_dim": 64,
+    "lstm_units": 128,
+    "test_accuracy": 0.82,
+    "train_accuracy": 0.88,
+    "model_architecture": "Bidirectional LSTM",
+    "dataset": "Sentiment140 (1.6M tweets)",
+    "preprocessing": "lowercase, remove URLs, mentions, special chars"
+}
