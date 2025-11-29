@@ -1,61 +1,59 @@
-# twitter-sentiment-analysis
-Twitter Sentiment Analysis Model
-Deep Learning model for sentiment analysis of tweets using Bidirectional LSTM.
-📊 Model Performance
+# Twitter Sentiment Analysis  
 
-Test Accuracy: 82%
-Training Accuracy: 88%
-Dataset: Sentiment140 (1.6M tweets)
-Architecture: Bidirectional LSTM with embeddings
+Deep Learning model for sentiment analysis of tweets using **Bidirectional LSTM**.
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
-│ embedding (Embedding)           │ (None, 100, 64)        │       640,000 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ spatial_dropout1d               │ (None, 100, 64)        │             0 │
-│ (SpatialDropout1D)              │                        │               │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ bidirectional (Bidirectional)   │ (None, 256)            │       197,632 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dropout (Dropout)               │ (None, 256)            │             0 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense (Dense)                   │ (None, 32)             │         8,224 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dropout_1 (Dropout)             │ (None, 32)             │             0 │
-├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense_1 (Dense)                 │ (None, 1)              │            33 │
-└─────────────────────────────────┴────────────────────────┴───────────────┘
- Total params: 845,889 (3.23 MB)
- Trainable params: 845,889 (3.23 MB)
- Non-trainable params: 0 (0.00 B)
+---
 
-🔧 Hyperparameters
-
-Vocabulary Size: 10,000 words
-Sequence Length: 100 tokens
-Embedding Dimension: 64
-LSTM Units: 128 (Bidirectional → 256 total)
-Dropout Rate: 0.3
-Learning Rate: 0.0005
-Batch Size: 128
-Optimizer: Adam
-
-📈 Training Details
-
-Dataset: Sentiment140 (1.6M tweets)
-
-800K negative tweets
-800K positive tweets
+## 📊 Model Performance
+- **Test Accuracy:** 82%
+- **Training Accuracy:** 88%
+- **Dataset:** Sentiment140 (1.6M tweets)
+- **Architecture:** Bi-LSTM with embeddings
 
 
-Train/Test Split: 80/20
-Preprocessing:
 
-Lowercase conversion
-URL removal
-Mention removal (@username)
-Special character removal (except ! and ?)
-Whitespace normalization
+## 🧠 Model Summary
+
+
+
+---
+
+## 🔧 Hyperparameters
+
+| Parameter | Value |
+|----------|-------|
+| Vocabulary Size | 10,000 words |
+| Sequence Length | 100 tokens |
+| Embedding Dimension | 64 |
+| LSTM Units | 128 (→ 256 Bi-LSTM) |
+| Dropout Rate | 0.3 |
+| Learning Rate | 0.0005 |
+| Batch Size | 128 |
+| Optimizer | Adam |
+
+---
+
+## 📈 Training Details
+
+### Dataset
+[Sentiment140 (1.6M tweets)](https://www.kaggle.com/datasets/kazanova/sentiment140)  
+- 800K negative tweets  
+- 800K positive tweets  
+
+### Train/Test Split
+- 80% training  
+- 20% testing  
+
+### Preprocessing Steps
+- Lowercase conversion  
+- URL removal  
+- Mention removal (@username)  
+- Special character removal *(except ! and ?)*  
+- Whitespace normalization  
+
+
+
+
+
 
 
